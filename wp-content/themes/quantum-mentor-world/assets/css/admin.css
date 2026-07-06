@@ -1,0 +1,191 @@
+/**
+ * Quantum Mentor World — Admin Stylesheet
+ *
+ * Styles for dashboard widgets, custom columns badges, and filters.
+ *
+ * @package Quantum_Mentor_World
+ * @version 1.0.0
+ */
+
+/* ── 1. Dashboard Stats Grid ── */
+.qmw-dashboard-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.qmw-stat-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: all 0.2s ease;
+}
+
+.qmw-stat-card:hover {
+    border-color: #cbd5e1;
+    transform: translateY(-1px);
+}
+
+.qmw-stat-card .dashicons {
+    font-size: 32px;
+    width: 32px;
+    height: 32px;
+    color: #64748b;
+}
+
+.qmw-stat-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.qmw-stat-count {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1;
+    color: #0f172a;
+}
+
+.qmw-stat-label {
+    font-size: 13px;
+    font-weight: 500;
+    color: #64748b;
+    text-decoration: none !important;
+}
+
+.qmw-stat-label:hover {
+    color: #7c3aed;
+}
+
+/* Highlights for pending items */
+.qmw-stat-card.highlight-pending {
+    border-left: 4px solid #f59e0b;
+    background: #fffbeb;
+}
+.qmw-stat-card.highlight-pending .dashicons {
+    color: #d97706;
+}
+
+.qmw-stat-card.highlight-contacts {
+    border-left: 4px solid #3b82f6;
+    background: #eff6ff;
+}
+.qmw-stat-card.highlight-contacts .dashicons {
+    color: #2563eb;
+}
+
+/* ── 2. Quick Add Section ── */
+.qmw-quick-add-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.qmw-quick-btn {
+    font-size: 12px !important;
+    padding: 2px 12px !important;
+    height: auto !important;
+    line-height: 24px !important;
+}
+
+/* ── 3. Recent Activity & Needing Review Lists ── */
+.qmw-recent-list, .qmw-review-list {
+    margin: 10px 0 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.qmw-recent-list li, .qmw-review-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid #f1f5f9;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+}
+
+.qmw-recent-list li:last-child, .qmw-review-list li:last-child {
+    border-bottom: none;
+}
+
+.qmw-recent-meta {
+    color: #94a3b8;
+    font-size: 11px;
+}
+
+.qmw-issues-badge {
+    background: #fee2e2;
+    color: #dc2626;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-weight: 600;
+}
+
+/* Post type badges in activity list */
+.qmw-badge {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background: #e2e8f0;
+    color: #475569;
+}
+.qmw-badge-software { background: #dbeafe; color: #1e40af; }
+.qmw-badge-themes_plugins { background: #f3e8ff; color: #6b21a8; }
+.qmw-badge-games { background: #dcfce7; color: #166534; }
+.qmw-badge-books { background: #ffedd5; color: #9a3412; }
+.qmw-badge-watch { background: #fee2e2; color: #991b1b; }
+.qmw-badge-tools { background: #e0f2fe; color: #075985; }
+
+/* ── 4. Custom List Columns Badges ── */
+.qmw-col-badge {
+    display: inline-block;
+    padding: 3px 8px;
+    font-size: 11px;
+    font-weight: 600;
+    border-radius: 4px;
+    line-height: 1.2;
+}
+
+/* Priority Badges */
+.qmw-badge-pri-normal { background: #f1f5f9; color: #64748b; border: 1px solid #cbd5e1; }
+.qmw-badge-pri-featured { background: #f3e8ff; color: #7c3aed; border: 1px solid #c084fc; }
+.qmw-badge-pri-trending { background: #ffedd5; color: #ea580c; border: 1px solid #ffb077; }
+.qmw-badge-pri-popular { background: #e0f2fe; color: #0284c7; border: 1px solid #7dd3fc; }
+
+/* Status Badges */
+.qmw-badge-stat-active { background: #dcfce7; color: #15803d; border: 1px solid #86efac; }
+.qmw-badge-stat-updated { background: #eff6ff; color: #1d4ed8; border: 1px solid #93c5fd; }
+.qmw-badge-stat-deprecated { background: #fef3c7; color: #d97706; border: 1px solid #fde047; }
+.qmw-badge-stat-removed { background: #fee2e2; color: #b91c1c; border: 1px solid #fca5a5; }
+
+/* Verification text marks */
+.qmw-col-verify {
+    font-size: 12px;
+    font-weight: 600;
+}
+.qmw-col-verify.qmw-verified { color: #16a34a; }
+.qmw-col-verify.qmw-pending { color: #d97706; }
+
+/* Contact Message Status */
+.qmw-badge-msg-new { background: #eff6ff; color: #2563eb; font-weight:700; border:1px solid #93c5fd; }
+.qmw-badge-msg-read { background: #f1f5f9; color: #475569; border:1px solid #cbd5e1; }
+.qmw-badge-msg-replied { background: #dcfce7; color: #166534; border:1px solid #86efac; }
+.qmw-badge-msg-archived { background: #f8fafc; color: #94a3b8; border:1px solid #e2e8f0; }
+
+/* ── 5. General Admin Panel Enhancements ── */
+.qmw-admin-table th {
+    width: 200px;
+}
+.qmw-success-message {
+    color: #16a34a;
+    font-weight: 600;
+    margin: 10px 0;
+}

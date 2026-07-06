@@ -1,0 +1,6 @@
+# Place this file named '.htaccess' inside your WordPress 'wp-content/uploads/' directory.
+# This prevents malicious uploaded files (like shell backdoors) from being executed.
+
+<Files *.php>
+    deny from all
+</Files>

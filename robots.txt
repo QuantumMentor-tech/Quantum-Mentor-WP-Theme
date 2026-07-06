@@ -1,0 +1,9 @@
+# robots.txt for Quantum Mentor World
+User-agent: *
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+Disallow: /xmlrpc.php
+Allow: /wp-admin/admin-ajax.php
+
+Sitemap: https://quantummentorworld.com/sitemap_index.xml
+Sitemap: https://quantummentorworld.com/sitemap/

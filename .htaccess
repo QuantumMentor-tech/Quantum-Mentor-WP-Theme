@@ -1,0 +1,24 @@
+# Quantum Mentor Theme - Root Server Hardening .htaccess
+
+# 1. Disable directory browsing
+Options -Indexes
+
+# 2. Block sensitive files access
+<FilesMatch "^(wp-config\.php|readme\.html|license\.txt|\.htaccess|xmlrpc\.php)">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# 3. Limit Upload size limits to 20MB (Adjust as necessary)
+LimitRequestBody 20971520
+
+# 4. Standard WordPress routing rules (fallback in case of custom settings)
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
